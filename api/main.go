@@ -8,11 +8,12 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/joho/godotenv"
+	"github.com/jsakash/shorten-url-fier-redis/routes"
 )
 
-func setupRoutes(app *fiber.app) {
+func setupRoutes(app *fiber.App) {
 	app.Get("/:url", routes.ResolveURL)
-	app.POST("/api/v1", routes.ShortenURL)
+	app.Post("/api/v1", routes.ShortenURL)
 }
 
 func main() {
